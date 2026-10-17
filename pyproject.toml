@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "srlab"
+version = "0.1.0"                      # one quoted string, not a list
+description = "Single-image super-resolution in PyTorch: interpolation baselines, SRCNN, ESPCN, autoencoder, SRGAN and EDSR, with a reproducible benchmark."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    {name = "Mihir Patil", email = "patilmihir9588@gmail.com"},
+]
+keywords = ["super-resolution", "pytorch", "computer-vision"]   # each word quoted
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+dependencies = [                       # one string per package
+    "torch",
+    "torchvision",
+    "numpy",
+    "pillow",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
